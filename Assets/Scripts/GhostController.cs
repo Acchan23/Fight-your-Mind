@@ -7,6 +7,7 @@ public class GhostController : MonoBehaviour
     private float speed = 2.5f;
     private GameObject player;
 
+
     void Start()
     {
         player = GameObject.Find("Player");

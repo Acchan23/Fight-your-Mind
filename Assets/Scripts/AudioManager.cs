@@ -38,8 +38,9 @@ public class AudioManager : MonoBehaviour
         soundEffects.PlayOneShot(clip);
     }
 
-    public void StopEffect()
+    public void StopEffect(AudioClip clip)
     {
+        soundEffects.clip = clip;
         soundEffects.Stop();
     }
 }

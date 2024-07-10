@@ -44,6 +44,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af23ba182d410f946b3cbd69a36e127e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
-  spawnPoints: []
+  enemyPrefabs:
+  - {fileID: 8920222273020621270, guid: b4c2476229c9b8441a25340b8c03f8d4, type: 3}
+  - {fileID: 8920222273020621270, guid: 2dbe335a07dffe84f89813b0476f69b6, type: 3}
+  spawnPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   pooledEnemies: []
+  waveNumber: 1
+  activeCount: 0

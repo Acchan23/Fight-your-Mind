@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 150f;
     [SerializeField] private GameObject flashlight;
     [SerializeField] private AudioClip backgroundMusic;
+    [SerializeField] private AudioClip hurtSfx;
     [SerializeField] private ParticleSystem lightParticle;
 
 
@@ -74,7 +75,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")) { 
+        if (collision.gameObject.CompareTag("Enemy")) {
+            AudioManager.Instance.PlayEffect(hurtSfx);
             collision.gameObject.SetActive(false);
             playerLife -= 1;
         }

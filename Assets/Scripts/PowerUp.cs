@@ -5,6 +5,8 @@ public class PowerUp : MonoBehaviour
     private PlayerController playerController;
     public float scaleFactor = 1.5f; // Factor de escala para aumentar el tamaño del jugador
     public bool hasPowerUp;
+    [SerializeField] private AudioClip pickupSfx;
+
 
     private void Start()
     {
@@ -20,6 +22,7 @@ public class PowerUp : MonoBehaviour
     {
         if (other.CompareTag("Player") && !hasPowerUp)
         {
+            AudioManager.Instance.PlayEffect(pickupSfx);
             other.transform.localScale *= scaleFactor;
             this.gameObject.SetActive(false); // Destruir el power-up después de ser recogido
         }
