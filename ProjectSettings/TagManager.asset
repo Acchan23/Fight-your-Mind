@@ -8,6 +8,8 @@ TagManager:
   - Battery
   - Wall
   - Goal
+  - Victory
+  - GameOver
   layers:
   - Default
   - TransparentFX

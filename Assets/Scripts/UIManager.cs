@@ -4,15 +4,9 @@ using UnityEngine.UI;
 //Maneja la actualizacion de la interfaz de Usuario
 public class UIManager : MonoBehaviour
 {
- 
     [SerializeField] private GameObject creditPanel;
     [SerializeField] private GameObject instructionPanel;
 
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
 
     //Pantalla de Instrucciones
     public void ShowInstructions()
