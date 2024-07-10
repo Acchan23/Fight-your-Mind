@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {   
     [SerializeField] private float moveSpeed = 5f;
-    //[SerializeField] private float rotationSpeed = 700f;
+    [SerializeField] private float rotationSpeed = 150f;
     [SerializeField] private GameObject flashlight;
     private Vector3 movement, scale;
     private Rigidbody playerRb;
@@ -25,8 +25,17 @@ public class PlayerController : MonoBehaviour
         moveVertical = Input.GetAxis("Vertical");
         moveHorizontal = Input.GetAxis("Horizontal");
 
-        movement = new Vector3(moveHorizontal, 0.0f, moveVertical).normalized;
+        // Rotar el jugador en el eje Y basado en moveHorizontal
+        if (moveHorizontal != 0)
+        {
+            float rotation = moveHorizontal * rotationSpeed * Time.deltaTime;
+            transform.Rotate(0, rotation, 0);
+        }
 
+        // Actualiza el vector de movimiento para que vaya hacia adelante
+        movement = transform.forward * moveVertical;
+
+        //Condicion de GameOver
         if (playerLife == 0)
         {
             GameManager.instance.EndGame();
@@ -38,13 +47,6 @@ public class PlayerController : MonoBehaviour
     {
 
         playerRb.MovePosition(playerRb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        //// Si hay movimiento, rota el jugador hacia la dirección del movimiento
-        //if (movement != Vector3.zero)
-        //{
-        //    Quaternion toRotation = Quaternion.LookRotation(movement, Vector3.up);
-        //    transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.fixedDeltaTime);
-        //}
 
     }
 
