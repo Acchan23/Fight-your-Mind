@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 150f;
     [SerializeField] private GameObject flashlight;
     [SerializeField] private AudioClip backgroundMusic;
+    [SerializeField] private GameObject objectivePanel;
     [SerializeField] private AudioClip hurtSfx;
     [SerializeField] private ParticleSystem lightParticle;
 
@@ -40,6 +41,9 @@ public class PlayerController : MonoBehaviour
         flashlight.SetActive(false);
         scale = transform.localScale;
 
+        objectivePanel = GameObject.FindWithTag("Objective");
+        objectivePanel.SetActive(true);
+
         heart1 = GameObject.FindWithTag("Heart").GetComponent<Image>();
         heart2 = GameObject.FindWithTag("Heart2").GetComponent<Image>();
         heart3 = GameObject.FindWithTag("Heart3").GetComponent<Image>();
@@ -70,6 +74,7 @@ public class PlayerController : MonoBehaviour
         // Actualiza la animaciÃ³n
         if (moveVertical != 0 || moveHorizontal != 0)
         {
+            objectivePanel.SetActive(false);
             anim.SetBool("Caminar", true);
         }
         else

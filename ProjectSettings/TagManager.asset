@@ -13,6 +13,7 @@ TagManager:
   - Heart
   - Heart2
   - Heart3
+  - Objective
   layers:
   - Default
   - TransparentFX

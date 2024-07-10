@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
         HideAllScreens();
         uiManager?.SetActive(true);
         hud.SetActive(false);
+        AudioManager.Instance.StopMusic();
         SceneManager.LoadScene(0);
     }
 

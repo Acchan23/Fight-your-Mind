@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GhostController : MonoBehaviour
 {
-    private float speed = 2.5f;
+    private float speed = 3.5f;
     private GameObject player;
 
 
