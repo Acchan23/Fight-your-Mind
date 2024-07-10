@@ -1487,7 +1487,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4910155946660035214, guid: 11804d7e3c1a94075a8411a137d0cd22, type: 3}
 --- !u!95 &7801608836345504691
@@ -1503,7 +1503,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 1658fa137bdde42b1b2ed7ecbfc97f69, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
