@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotationSpeed = 150f;
     [SerializeField] private GameObject flashlight;
+    [SerializeField] private AudioClip backgroundMusic;
     private Vector3 movement, scale;
     private Rigidbody playerRb;
     private float moveVertical, moveHorizontal;
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         flashlight.SetActive(false);
         scale = transform.localScale;
+
+        AudioManager.Instance.PlayMusic(backgroundMusic);
     }
 
     private void Update()
@@ -39,6 +42,7 @@ public class PlayerController : MonoBehaviour
         if (playerLife == 0)
         {
             GameManager.instance.EndGame();
+            AudioManager.Instance.StopMusic();
         }
 
     }

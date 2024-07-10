@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 //Persecucion basica de un enemigo al jugador
 public class EnemyController : MonoBehaviour
 {
-    private float speed = 3.5f;
+    private float speed = 5f;
     private GameObject player;
     private float raycastDistance = 200.0f;
 
