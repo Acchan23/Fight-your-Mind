@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5453734409518387277}
   - component: {fileID: 1061617630}
   - component: {fileID: 1061617631}
-  - component: {fileID: 3540010710387282638}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -98,27 +97,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -4910155946660035214, guid: 11804d7e3c1a94075a8411a137d0cd22, type: 3}
---- !u!95 &3540010710387282638
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5453734409518387316}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1658fa137bdde42b1b2ed7ecbfc97f69, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1169011420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231,6 +209,10 @@ PrefabInstance:
     - target: {fileID: 3333177171353880710, guid: f4779c940909b2341b96b32ea3cb9fb3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6303107206306071856, guid: f4779c940909b2341b96b32ea3cb9fb3, type: 3}
+      propertyPath: m_SpotAngle
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6747864568401294261, guid: f4779c940909b2341b96b32ea3cb9fb3, type: 3}
       propertyPath: m_Name

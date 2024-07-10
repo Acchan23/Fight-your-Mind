@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FlashlightController : MonoBehaviour
@@ -31,7 +32,7 @@ public class FlashlightController : MonoBehaviour
 
     void ToggleFlashlight()
     {
-        flashlight.enabled = !flashlight.enabled;
+            flashlight.enabled = !flashlight.enabled;
     }
 
     void DetectAndEliminateEnemies()
