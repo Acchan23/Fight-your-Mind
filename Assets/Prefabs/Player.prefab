@@ -4965,9 +4965,11 @@ MonoBehaviour:
   rotationSpeed: 150
   flashlight: {fileID: 7430471930129014231}
   backgroundMusic: {fileID: 8300000, guid: 824d061b6f6124e41ae63c879cffa4b3, type: 3}
+  hurtSfx: {fileID: 8300000, guid: b0267dc42dde53d4f947b143d61584fc, type: 3}
   lightParticle: {fileID: 1793346765}
   hasPowerUp: 0
   playerLife: 3
+  isGameOver: 0
 --- !u!65 &1061617630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4979,8 +4981,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8273505, y: 3.884839, z: 1}
-  m_Center: {x: 0.103307314, y: 1.8408518, z: -7.043054e-10}
+  m_Size: {x: 1.3232981, y: 3.884839, z: 1}
+  m_Center: {x: 0.028947089, y: 1.8408518, z: 1.9957946e-10}
 --- !u!1001 &4232096984445038178
 PrefabInstance:
   m_ObjectHideFlags: 0

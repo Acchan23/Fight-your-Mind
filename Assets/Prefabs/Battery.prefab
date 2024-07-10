@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scaleFactor: 1.2
   hasPowerUp: 0
+  pickupSfx: {fileID: 8300000, guid: 1b563145bf37daf4295d5c043963bb7d, type: 3}
 --- !u!136 &6657243958731764024
 CapsuleCollider:
   m_ObjectHideFlags: 0
