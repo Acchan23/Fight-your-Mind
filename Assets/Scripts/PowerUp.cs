@@ -11,6 +11,11 @@ public class PowerUp : MonoBehaviour
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
 
     }
+
+    private void Update()
+    {
+        transform.Rotate(new Vector3(0,10,0));
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !hasPowerUp)

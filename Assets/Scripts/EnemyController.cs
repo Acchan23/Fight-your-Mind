@@ -7,10 +7,13 @@ public class EnemyController : MonoBehaviour
     private float speed = 5f;
     private GameObject player;
     private float raycastDistance = 200.0f;
+    Animator anim;
+
 
     void Start()
     {
         player = GameObject.Find("Player");
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -36,6 +39,15 @@ public class EnemyController : MonoBehaviour
 
         // Mueve al enemigo en la dirección calculada
         transform.Translate(moveDirection * speed * Time.deltaTime, Space.World);
+
+        //Animacion
+        if (moveDirection != Vector3.zero) { 
+            anim.SetBool("Caminar", true);
+        }
+        else
+        {
+            anim.SetBool("Caminar", false);
+        }
 
         // Hace que el enemigo mire al jugador
         transform.LookAt(player.transform);

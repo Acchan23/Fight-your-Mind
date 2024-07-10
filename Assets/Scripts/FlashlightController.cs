@@ -27,6 +27,7 @@ public class FlashlightController : MonoBehaviour
         {
             DetectAndEliminateEnemies();
         }
+       
 
     }
 

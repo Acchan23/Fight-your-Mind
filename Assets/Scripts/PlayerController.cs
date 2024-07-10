@@ -7,15 +7,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float rotationSpeed = 150f;
     [SerializeField] private GameObject flashlight;
     [SerializeField] private AudioClip backgroundMusic;
+    [SerializeField] private ParticleSystem lightParticle;
+
+
     private Vector3 movement, scale;
     private Rigidbody playerRb;
     private float moveVertical, moveHorizontal;
     private float timeLight = 7;
     public bool hasPowerUp = false;
     public float playerLife = 3;
+    public bool isGameOver = false;
+    Animator anim;
 
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         playerRb = GetComponent<Rigidbody>();
         flashlight.SetActive(false);
         scale = transform.localScale;
@@ -35,14 +41,26 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(0, rotation, 0);
         }
 
+        // Actualiza la animaciÃ³n
+        if (moveVertical != 0 || moveHorizontal != 0)
+        {
+            anim.SetBool("Caminar", true);
+        }
+        else
+        {
+            anim.SetBool("Caminar", false);
+            //Debug.Log("Run: false");
+        }
+
+
         // Actualiza el vector de movimiento para que vaya hacia adelante
         movement = transform.forward * moveVertical;
 
         //Condicion de GameOver
-        if (playerLife == 0)
+        if (playerLife == 0 && !isGameOver)
         {
+            isGameOver = true;
             GameManager.instance.EndGame();
-            AudioManager.Instance.StopMusic();
         }
 
     }
@@ -68,8 +86,15 @@ public class PlayerController : MonoBehaviour
         {
             hasPowerUp = true;
             flashlight.SetActive(true);
+            lightParticle.Play();
             other.gameObject.SetActive(false);
             StartCoroutine(PowerUpCountDownRoutine());
+        }
+
+        if (other.gameObject.CompareTag("Goal"))
+        {
+            GameManager.instance.WinGame();
+            isGameOver = true;
         }
     }
 
@@ -78,6 +103,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(timeLight);
         hasPowerUp = false;
         flashlight.SetActive(false);
+        lightParticle.Stop();
         transform.localScale = scale;
     }
 }
