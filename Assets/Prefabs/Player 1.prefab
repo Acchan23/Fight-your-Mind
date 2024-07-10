@@ -223,6 +223,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: characterMedium
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 11804d7e3c1a94075a8411a137d0cd22, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1658fa137bdde42b1b2ed7ecbfc97f69, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11804d7e3c1a94075a8411a137d0cd22, type: 3}
 --- !u!4 &543450652564575543 stripped

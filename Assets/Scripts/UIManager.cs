@@ -4,22 +4,14 @@ using UnityEngine.UI;
 //Maneja la actualizacion de la interfaz de Usuario
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private GameObject gameOverPanel;
-    [SerializeField] private GameObject winPanel;
+ 
     [SerializeField] private GameObject creditPanel;
     [SerializeField] private GameObject instructionPanel;
 
 
-    //Pantalla para el fin del juego o GameOver
-    public void ShowGameOverScreen()
+    private void Awake()
     {
-        gameOverPanel.SetActive(true);
-    }
-
-    //Pantalla de Victoria
-    public void ShowWinScreen()
-    {
-        winPanel.SetActive(true);
+        DontDestroyOnLoad(gameObject);
     }
 
     //Pantalla de Instrucciones
@@ -45,9 +37,5 @@ public class UIManager : MonoBehaviour
     }
 
     //Funcion para ocultar los Canvas
-    public void HideAllScreens()
-    {
-        gameOverPanel.SetActive(false);
-        winPanel.SetActive(false);
-    }
+    
 }

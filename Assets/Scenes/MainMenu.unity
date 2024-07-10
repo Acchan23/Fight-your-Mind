@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uiManager: {fileID: 1107779265}
+  gameOverPanel: {fileID: 7621269659395691052, guid: d68e193a7368ad44e8a546d7f2026e32, type: 3}
+  winPanel: {fileID: 2257541980166566047, guid: 124c705ce91fb8d4fb627b9ec20f63ff, type: 3}
 --- !u!4 &399429233
 Transform:
   m_ObjectHideFlags: 0
