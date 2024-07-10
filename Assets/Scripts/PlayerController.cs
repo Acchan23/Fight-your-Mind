@@ -12,9 +12,11 @@ public class PlayerController : MonoBehaviour
     private float timeLight = 7;
     public bool hasPowerUp = false;
     public float playerLife = 3;
+    Animator anim;
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         playerRb = GetComponent<Rigidbody>();
         flashlight.SetActive(false);
         scale = transform.localScale;
@@ -31,6 +33,19 @@ public class PlayerController : MonoBehaviour
             float rotation = moveHorizontal * rotationSpeed * Time.deltaTime;
             transform.Rotate(0, rotation, 0);
         }
+
+        // Actualiza la animaciÃ³n
+        if (moveVertical != 0 || moveHorizontal != 0)
+        {
+            anim.SetBool("Caminar", true);
+            Debug.Log("Run: true");
+        }
+        else
+        {
+            anim.SetBool("Caminar", false);
+            Debug.Log("Run: false");
+        }
+
 
         // Actualiza el vector de movimiento para que vaya hacia adelante
         movement = transform.forward * moveVertical;
