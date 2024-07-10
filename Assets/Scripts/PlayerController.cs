@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {   
@@ -16,9 +17,20 @@ public class PlayerController : MonoBehaviour
     private float moveVertical, moveHorizontal;
     private float timeLight = 7;
     public bool hasPowerUp = false;
-    public float playerLife = 3;
     public bool isGameOver = false;
     Animator anim;
+
+
+    //Player life and sprites controller
+    public int playerLife = 3;
+    private int currentLife;
+
+    public Image heart1;
+    public Image heart2;
+    public Image heart3;
+
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
 
     void Start()
     {
@@ -27,8 +39,12 @@ public class PlayerController : MonoBehaviour
         flashlight.SetActive(false);
         scale = transform.localScale;
 
+        currentLife = playerLife;
+
         AudioManager.Instance.PlayMusic(backgroundMusic);
     }
+
+    
 
     private void Update()
     {
@@ -52,6 +68,21 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("Caminar", false);
             //Debug.Log("Run: false");
         }
+
+        // Si el jugador pierde vida, cambia el sprite de corazón por un corazón vacio
+
+        if (playerLife < 3)
+        {
+            heart3.sprite = emptyHeart;
+            if (playerLife < 2)
+            {
+                heart2.sprite = emptyHeart;
+                if (playerLife < 1)
+                    heart1.sprite = emptyHeart;
+            }
+        }
+        
+
 
 
         // Actualiza el vector de movimiento para que vaya hacia adelante
