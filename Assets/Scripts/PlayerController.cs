@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,6 +39,14 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody>();
         flashlight.SetActive(false);
         scale = transform.localScale;
+
+        heart1 = GameObject.FindWithTag("Heart").GetComponent<Image>();
+        heart2 = GameObject.FindWithTag("Heart2").GetComponent<Image>();
+        heart3 = GameObject.FindWithTag("Heart3").GetComponent<Image>();
+
+        heart1.sprite = fullHeart;
+        heart2.sprite = fullHeart;
+        heart3.sprite = fullHeart;
 
         currentLife = playerLife;
 

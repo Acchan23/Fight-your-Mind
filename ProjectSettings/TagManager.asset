@@ -10,6 +10,9 @@ TagManager:
   - Goal
   - Victory
   - GameOver
+  - Heart
+  - Heart2
+  - Heart3
   layers:
   - Default
   - TransparentFX

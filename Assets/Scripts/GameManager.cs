@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject uiManager; // Referencia al UIManager desde el Inspector 
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject winPanel;
+    [SerializeField] private GameObject hud;
+
 
     private void Awake()
     {
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         HideAllScreens();
+        hud.SetActive(false);
     }
 
     public void StartGame()
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
         RenaudeGame();
         HideAllScreens();
         uiManager?.SetActive(false);
+        hud.SetActive(true);
         SceneManager.LoadScene("Game");
     }
 
@@ -51,6 +55,7 @@ public class GameManager : MonoBehaviour
         RenaudeGame();
         HideAllScreens();
         uiManager.SetActive(false);
+        hud.SetActive(true);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -69,6 +74,7 @@ public class GameManager : MonoBehaviour
         RenaudeGame();
         HideAllScreens();
         uiManager?.SetActive(true);
+        hud.SetActive(false);
         SceneManager.LoadScene(0);
     }
 
